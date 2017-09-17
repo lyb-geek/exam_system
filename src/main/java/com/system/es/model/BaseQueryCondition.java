@@ -7,6 +7,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 public abstract class BaseQueryCondition {
 	private Map<String, Object> match;
 	private Map<String, Object> term;
+	private Map<String, Object> terms;// 构造in查询
 	@JSONField(name = "multi_match")
 	private MutiMatch multiMatch;
 	private Map<String, Object> range;
@@ -50,6 +51,14 @@ public abstract class BaseQueryCondition {
 
 	public void setNested(Nested nested) {
 		this.nested = nested;
+	}
+
+	public Map<String, Object> getTerms() {
+		return terms;
+	}
+
+	public void setTerms(Map<String, Object> terms) {
+		this.terms = terms;
 	}
 
 }

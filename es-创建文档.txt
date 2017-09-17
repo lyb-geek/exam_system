@@ -1,4 +1,4 @@
-1.´´½¨Ë÷Òı£¨Àà±ÈÊı¾İ¿âµÄdb£©
+1.åˆ›å»ºç´¢å¼•ï¼ˆç±»æ¯”æ•°æ®åº“çš„dbï¼‰
 curl -XPUT 'localhost:9200/exam_system?pretty' -H 'Content-Type: application/json' -d'
 {
     "settings" : {
@@ -10,7 +10,8 @@ curl -XPUT 'localhost:9200/exam_system?pretty' -H 'Content-Type: application/jso
 }
 '
 
-2.´´½¨type(Àà±ÈÊı¾İ¿âµÄ½¨±í)
+
+2.åˆ›å»ºtype(ç±»æ¯”æ•°æ®åº“çš„å»ºè¡¨)
 curl -XPUT 'localhost:9200/exam_system/_mapping/student?pretty' -H 'Content-Type: application/json' -d'
 {
    "properties": { 

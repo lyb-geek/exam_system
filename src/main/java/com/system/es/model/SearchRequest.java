@@ -1,5 +1,6 @@
 package com.system.es.model;
 
+import java.util.List;
 import java.util.Map;
 
 public class SearchRequest {
@@ -9,6 +10,8 @@ public class SearchRequest {
 	private Integer size = 10;
 
 	private Map<String, Map<String, Map<String, Object>>> aggs;
+
+	private List<Map<String, Map<String, String>>> sort;
 
 	public Map<String, Map<String, Map<String, Object>>> getAggs() {
 		return aggs;
@@ -40,6 +43,14 @@ public class SearchRequest {
 
 	public void setQuery(Query query) {
 		this.query = query;
+	}
+
+	public List<Map<String, Map<String, String>>> getSort() {
+		return sort;
+	}
+
+	public void setSort(List<Map<String, Map<String, String>>> sort) {
+		this.sort = sort;
 	}
 
 }

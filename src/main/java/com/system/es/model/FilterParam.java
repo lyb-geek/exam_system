@@ -6,7 +6,7 @@ public class FilterParam {
 
 	private Object value;
 
-	private int type = 1;// 过滤类型，1表示match，2表示term,3表示multi_match，4、range
+	private int type = 1;// 过滤类型，1表示match，2表示term,3表示multi_match，4、range,5 terms(构造sql的in查询)
 
 	private int multiMatchflag = 1;// type为3时使用
 

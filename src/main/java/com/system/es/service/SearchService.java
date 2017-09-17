@@ -62,6 +62,9 @@ public class SearchService {
 		// 设置group by
 		setGroupBy(request, searchParam);
 
+		// 设置排序
+		setSort(request, searchParam);
+
 		request.setQuery(query);
 
 		HttpEntity entity = new NStringEntity(JSONObject.toJSONString(request), ContentType.APPLICATION_JSON);
@@ -84,6 +87,21 @@ public class SearchService {
 		}
 
 		return searchResponse;
+	}
+
+	/**
+	 * 设置排序
+	 * 
+	 * @param request
+	 * @param searchParam
+	 */
+	private void setSort(SearchRequest request, SearchParam searchParam) {
+		if (searchParam.getOrderField() != null && !searchParam.getOrderField().isEmpty()) {
+			List<Map<String, Map<String, String>>> sort = new ArrayList<>();
+			sort.add(searchParam.getOrderField());
+			request.setSort(sort);
+		}
+
 	}
 
 	/**
@@ -324,6 +342,11 @@ public class SearchService {
 				if (filterParam.getDateFormat() != null && filterParam.getDateFormat() != "") {
 					rangeMap.put("format", filterParam.getDateFormat());
 				}
+				break;
+			case 5:
+				Map<String, Object> terms = new HashMap<String, Object>();
+				terms.put(filterParam.getKey(), filterParam.getValue());
+				m.setTerms(terms);
 				break;
 			}
 

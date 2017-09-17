@@ -1,6 +1,7 @@
 package com.system.es.model;
 
 import java.util.List;
+import java.util.Map;
 
 public class SearchParam {
 	private String index;
@@ -12,6 +13,7 @@ public class SearchParam {
 
 	private List<FilterParam> filters;
 	private List<AggsParam> aggs;
+	private Map<String, Map<String, String>> orderField;
 
 	public List<AggsParam> getAggs() {
 		return aggs;
@@ -75,6 +77,14 @@ public class SearchParam {
 
 	public void setQuery(String query) {
 		this.query = query;
+	}
+
+	public Map<String, Map<String, String>> getOrderField() {
+		return orderField;
+	}
+
+	public void setOrderField(Map<String, Map<String, String>> orderField) {
+		this.orderField = orderField;
 	}
 
 }

@@ -1,6 +1,6 @@
-0.²é¿´ÏµÍ³°²×°µÄjdk£¨centos7£©
+0.æŸ¥çœ‹ç³»ç»Ÿå®‰è£…çš„jdkï¼ˆcentos7ï¼‰
 rpm -qa | grep openjdk 
-Ğ¶ÔØÏµÍ³×Ô´øjdk
+å¸è½½ç³»ç»Ÿè‡ªå¸¦jdk
 yum -y remove java-1.8.0-openjdk-1.8.0.102-4.b14.el7.x86_64 
 yum -y remove java-1.8.0-openjdk-headless-1.8.0.102-4.b14.el7.x86_64
 
@@ -8,42 +8,42 @@ yum -y remove java-1.7.0-openjdk-headless-1.7.0.111-2.6.7.8.el7.x86_64
 yum -y remove java-1.7.0-openjdk-1.7.0.111-2.6.7.8.el7.x86_64
 
 
-1.jdk°²×°
-ÃüÁîÈçÏÂ£ºtar xvf  jdk-8u121-linux-x64.gz
-1.2.ÉèÖÃ»·¾³±äÁ¿
+1.jdkå®‰è£…
+å‘½ä»¤å¦‚ä¸‹ï¼štar xvf  jdk-8u121-linux-x64.gz
+1.2.è®¾ç½®ç¯å¢ƒå˜é‡
 vim /etc/profile
-ÔÚprofileÎÄ¼şµÄÄ©Î²¼ÓÈëÈçÏÂÃüÁî£º
-°´i½øĞĞ²åÈë,°´o¿ÉÒÔÖ±½Ó½øÈëµ±Ç°ĞĞµÄÏÂÒ»ĞĞ
+åœ¨profileæ–‡ä»¶çš„æœ«å°¾åŠ å…¥å¦‚ä¸‹å‘½ä»¤ï¼š
+æŒ‰iè¿›è¡Œæ’å…¥,æŒ‰oå¯ä»¥ç›´æ¥è¿›å…¥å½“å‰è¡Œçš„ä¸‹ä¸€è¡Œ
 export JAVA_HOME=/opt/soft/jdk1.8.0_121
 export JRE_HOME=/opt/soft/jdk1.8.0_121/jre
 export PATH=$PATH:/opt/soft/jdk1.8.0_121/bin
 export CLASSPATH=./:/opt/soft/jdk1.8.0_121/lib:/opt/soft/jdk1.8.0_121/jre/lib
-1.3.°´esc£¬ÊäÈë:wq±£´æ²¢ÍË³ö£¬Ö´ĞĞsource /etc/profileÊ¹Ö®ÉúĞ§
-1.4.ÖØĞÂÆô¶¯ÏµÍ³ºó£¬ÊäÈë£ºjava -version
+1.3.æŒ‰escï¼Œè¾“å…¥:wqä¿å­˜å¹¶é€€å‡ºï¼Œæ‰§è¡Œsource /etc/profileä½¿ä¹‹ç”Ÿæ•ˆ
+1.4.é‡æ–°å¯åŠ¨ç³»ç»Ÿåï¼Œè¾“å…¥ï¼šjava -version
 
 
-2.elasticsearch °²×°
+2.elasticsearch å®‰è£…
 2.1    cd /opt/soft
     unzip elasticsearch-5.5.1.zip
-2.2 ĞŞ¸ÄElasticsearch Ïà¹Ø²ÎÊı
+2.2 ä¿®æ”¹Elasticsearch ç›¸å…³å‚æ•°
 
 vim /opt/soft/elasticsearch-5.5.1/config/elasticsearch.yml
 
-ĞŞ¸ÄÈçÏÂÄÚÈİ:
+ä¿®æ”¹å¦‚ä¸‹å†…å®¹:
 
-# »»¸ö¼¯ÈºµÄÃû×Ö£¬ÃâµÃ¸ú±ğÈËµÄ¼¯Èº»ìÔÚÒ»Æğ
+# æ¢ä¸ªé›†ç¾¤çš„åå­—ï¼Œå…å¾—è·Ÿåˆ«äººçš„é›†ç¾¤æ··åœ¨ä¸€èµ·
 cluster.name: elasticsearch
 
-# »»¸ö½ÚµãÃû×Ö
+# æ¢ä¸ªèŠ‚ç‚¹åå­—
 node.name: node-1
 
-# ĞŞ¸ÄÒ»ÏÂESµÄ¼àÌıµØÖ·£¬ÕâÑù±ğµÄ»úÆ÷Ò²¿ÉÒÔ·ÃÎÊ
+# ä¿®æ”¹ä¸€ä¸‹ESçš„ç›‘å¬åœ°å€ï¼Œè¿™æ ·åˆ«çš„æœºå™¨ä¹Ÿå¯ä»¥è®¿é—®
 network.host: 0.0.0.0
 
-# Ä¬ÈÏµÄ¾ÍºÃ
+# é»˜è®¤çš„å°±å¥½
 http.port: 9200
 
-# Ôö¼ÓĞÂµÄ²ÎÊı£¬ÕâÑùhead²å¼ş¿ÉÒÔ·ÃÎÊes
+# å¢åŠ æ–°çš„å‚æ•°ï¼Œè¿™æ ·headæ’ä»¶å¯ä»¥è®¿é—®es
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 
@@ -54,7 +54,7 @@ http.cors.allow-origin: "*"
 
 2.4 vim /etc/sysctl.conf
 vm.max_map_count=262144
- Ö´ĞĞÃüÁî
+ æ‰§è¡Œå‘½ä»¤
  cd
  sysctl -p
 
@@ -65,23 +65,23 @@ chown   -R   root.root    /var/empty/sshd
 chmod 744 /var/empty/sshd
 service sshd restart
 
-2.5 µÍ°æ±¾µÄcentos¿ÉÄÜĞèÒªÖ´ĞĞ
+2.5 ä½ç‰ˆæœ¬çš„centoså¯èƒ½éœ€è¦æ‰§è¡Œ
 
 
-2.6 ´´½¨ÓÃ»§×éºÍÓÃ»§£¨elasticsearch²»Ö§³ÖÓÃrootÓÃ»§Æô¶¯£©
+2.6 åˆ›å»ºç”¨æˆ·ç»„å’Œç”¨æˆ·ï¼ˆelasticsearchä¸æ”¯æŒç”¨rootç”¨æˆ·å¯åŠ¨ï¼‰
 
 groupadd esgroup  
 useradd es -g esgroup
-2.7 ĞŞ¸Ä Elasticsearch ÎÄ¼ş¼Ğ¼°ÄÚ²¿ËùÓĞÎÄ¼şµÄËùÊôÓÃ»§×éºÍÓÃ»§£¨×¢ÒâÓÃ»§ºÍÓÃ»§×éµÄË³Ğò£©¡£
+2.7 ä¿®æ”¹ Elasticsearch æ–‡ä»¶å¤¹åŠå†…éƒ¨æ‰€æœ‰æ–‡ä»¶çš„æ‰€å±ç”¨æˆ·ç»„å’Œç”¨æˆ·ï¼ˆæ³¨æ„ç”¨æˆ·å’Œç”¨æˆ·ç»„çš„é¡ºåºï¼‰ã€‚
 
 chown -R es:esgroup /opt/soft/elasticsearch-5.5.1
-2.8 ÇĞ»»µ½esÓÃ»§£¬²¢Æô¶¯Elasticsearch
+2.8 åˆ‡æ¢åˆ°esç”¨æˆ·ï¼Œå¹¶å¯åŠ¨Elasticsearch
 
  su - es 
  
   ./bin/elasticsearch -d
   
-3.head ²å¼ş°²×°
+3.head æ’ä»¶å®‰è£…
 cd /opt/soft
 unzip elasticsearch-head-master.zip
 
@@ -98,12 +98,12 @@ connect: {
     }
 }
 
-ĞŞ¸ÄheadµÄÁ¬½ÓµØÖ·:
+ä¿®æ”¹headçš„è¿æ¥åœ°å€:
 vim _site/app.js
 this.base_uri = this.config.base_uri || this.prefs.get("app-base_uri") || "http://localhost:9200";
-°ÑlocalhostĞŞ¸Ä³ÉÄãesµÄ·şÎñÆ÷µØÖ·£¬Èç:
+æŠŠlocalhostä¿®æ”¹æˆä½ esçš„æœåŠ¡å™¨åœ°å€ï¼Œå¦‚:
 
-this.base_uri = this.config.base_uri || this.prefs.get("app-base_uri") || "http://esµÄip:9200";
+this.base_uri = this.config.base_uri || this.prefs.get("app-base_uri") || "http://esçš„ip:9200";
 
 tar xvf  node-v4.6.1-linux-x64.tar.gz
 cd  node-v4.6.1-linux-x64
@@ -120,6 +120,6 @@ npm install -g npm --registry=https://registry.npm.taobao.org
 npm install -g grunt-cli
 grunt server
 
-°²×°kibana
+å®‰è£…kibana
 cd /opt/soft
 tar xvf kibana-5.5.1-linux-x86_64.tar.gz

@@ -280,4 +280,80 @@ public class StudentServiceImplTest {
 		searchService.search(search);
 	}
 
+	@Test
+	public void testSort() {
+		SearchService searchService = (SearchService) applicationContext.getBean("searchService");
+		SearchParam search = new SearchParam();
+		search.setFlag(1);
+		search.setPage(0);
+		search.setSize(100);
+
+		search.setIndex("exam_system");
+		search.setType("student");
+
+		List<FilterParam> filters = new ArrayList<FilterParam>();
+
+		FilterParam filterParam1 = new FilterParam();
+		filterParam1.setKey("grade");
+		filterParam1.setValue("1441123200000");
+		filterParam1.setNested(false);
+		filterParam1.setBoolType((byte) 2);
+		filterParam1.setType(1);
+
+		Map<String, Map<String, String>> map = new HashMap<>();
+		Map<String, String> order = new HashMap<>();
+		order.put("order", "desc");
+		map.put("collegeid", order);
+
+		Map<String, String> order2 = new HashMap<>();
+		order2.put("order", "asc");
+		map.put("userid", order2);
+
+		search.setOrderField(map);
+
+		filters.add(filterParam1);
+
+		search.setFilters(filters);
+
+		searchService.search(search);
+	}
+
+	@Test
+	public void testSearchIn() {
+		SearchService searchService = (SearchService) applicationContext.getBean("searchService");
+		SearchParam search = new SearchParam();
+		search.setFlag(1);
+		search.setPage(0);
+		search.setSize(100);
+
+		search.setIndex("exam_system");
+		search.setType("student");
+
+		List<FilterParam> filters = new ArrayList<FilterParam>();
+
+		FilterParam filterParam1 = new FilterParam();
+		filterParam1.setKey("userid");
+		List<String> value = new ArrayList<>();
+		value.add("10004");
+		value.add("10005");
+		filterParam1.setValue(value);
+		filterParam1.setNested(false);
+		filterParam1.setBoolType((byte) 2);
+		filterParam1.setType(5);
+
+		Map<String, Map<String, String>> map = new HashMap<>();
+
+		Map<String, String> order2 = new HashMap<>();
+		order2.put("order", "desc");
+		map.put("userid", order2);
+
+		search.setOrderField(map);
+
+		filters.add(filterParam1);
+
+		search.setFilters(filters);
+
+		searchService.search(search);
+	}
+
 }
