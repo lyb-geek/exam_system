@@ -1,0 +1,25 @@
+1.创建索引（类比数据库的db）
+curl -XPUT 'localhost:9200/exam_system?pretty' -H 'Content-Type: application/json' -d'
+{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 3, 
+            "number_of_replicas" : 2 
+        }
+    }
+}
+'
+
+2.创建type(类比数据库的建表)
+curl -XPUT 'localhost:9200/exam_system/_mapping/student?pretty' -H 'Content-Type: application/json' -d'
+{
+   "properties": { 
+        "userid":    { "type": "integer"  }, 
+        "username":     { "type": "text","analyzer": "ik_max_word"  }, 
+        "sex":      { "type": "keyword" }, 
+		"birthyear":      { "type": "date" }, 
+		"grade":      { "type": "date" },
+        "collegeid":    { "type": "integer"  }		
+      }
+}
+'
